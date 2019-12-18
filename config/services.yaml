@@ -1,0 +1,4 @@
+services:
+    taxonomy_type_api:
+        class: \PoP\TaxonomiesWP\TypeAPIs\TaxonomyTypeAPI
+        public: true
