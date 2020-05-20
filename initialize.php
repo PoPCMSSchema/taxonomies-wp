@@ -1,2 +1,2 @@
 <?php
-\PoP\TaxonomiesWP\Component::init();
+//\PoP\TaxonomiesWP\Component::initialize();
