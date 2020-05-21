@@ -20,12 +20,13 @@ Via Composer
 composer require getpop/taxonomies-wp
 ```
 
-<!--
 ## Usage
 
+Initialize the component:
+
 ``` php
+\PoP\TaxonomiesWP\Component::initialize();
 ```
--->
 
 ## Standards
 
