@@ -20,7 +20,7 @@
     "require": {
         "php" : "~7.1",
         "getpop/taxonomies": "dev-master",
-        "getpop/posts-wp": "dev-master",
+        "getpop/customposts-wp": "dev-master",
         "getpop/migrate-taxonomies-wp": "dev-master"
     },
     "require-dev": {
