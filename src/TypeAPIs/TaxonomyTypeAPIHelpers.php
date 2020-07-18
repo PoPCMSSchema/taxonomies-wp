@@ -9,18 +9,18 @@ namespace PoP\TaxonomiesWP\TypeAPIs;
  */
 class TaxonomyTypeAPIHelpers
 {
-    public static function getTaxonomyObjectAndID($taxonomyObjectOrID): array
+    public static function getTermObjectAndID($termObjectOrID): array
     {
-        if (is_object($taxonomyObjectOrID)) {
-            $taxonomy = $taxonomyObjectOrID;
-            $taxonomyID = $taxonomy->ID;
+        if (is_object($termObjectOrID)) {
+            $termObject = $termObjectOrID;
+            $termObjectID = $termObject->ID;
         } else {
-            $taxonomyID = $taxonomyObjectOrID;
-            $taxonomy = \get_taxonomy($taxonomyID);
+            $termObjectID = $termObjectOrID;
+            $termObject = \get_term($termObjectID);
         }
         return [
-            $taxonomy,
-            $taxonomyID,
+            $termObject,
+            $termObjectID,
         ];
     }
 }

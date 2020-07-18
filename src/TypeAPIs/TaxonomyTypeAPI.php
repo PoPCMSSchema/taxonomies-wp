@@ -11,9 +11,9 @@ use PoP\Taxonomies\TypeAPIs\TaxonomyTypeAPIInterface;
  */
 class TaxonomyTypeAPI implements TaxonomyTypeAPIInterface
 {
-    protected function getTaxonomyObjectAndID($taxonomyObjectOrID): array
+    protected function getTermObjectAndID($termObjectOrID): array
     {
-        return TaxonomyTypeAPIHelpers::getTaxonomyObjectAndID($taxonomyObjectOrID);
+        return TaxonomyTypeAPIHelpers::getTermObjectAndID($termObjectOrID);
     }
     /**
      * Retrieves the taxonomy name of the object ("post_tag", "category", etc)
@@ -21,12 +21,12 @@ class TaxonomyTypeAPI implements TaxonomyTypeAPIInterface
      * @param [type] $object
      * @return string
      */
-    public function getTaxonomyName($taxonomyObjectOrID): string
+    public function getTermTaxonomyName($termObjectOrID): string
     {
         list(
-            $taxonomy,
-            $taxonomyID,
-        ) = $this->getTaxonomyObjectAndID($taxonomyObjectOrID);
-        return $taxonomy->name;
+            $termObject,
+            $termObjectID,
+        ) = $this->getTermObjectAndID($termObjectOrID);
+        return $termObject->taxonomy;
     }
 }
