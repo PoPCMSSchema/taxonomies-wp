@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace PoP\TaxonomiesWP;
+namespace PoPSchema\TaxonomiesWP;
 
 use PoP\Root\Component\AbstractComponent;
 use PoP\Root\Component\YAMLServicesTrait;
@@ -18,8 +18,8 @@ class Component extends AbstractComponent
     public static function getDependedComponentClasses(): array
     {
         return [
-            \PoP\Taxonomies\Component::class,
-            \PoP\CustomPostsWP\Component::class,
+            \PoPSchema\Taxonomies\Component::class,
+            \PoPSchema\CustomPostsWP\Component::class,
         ];
     }
 

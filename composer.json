@@ -1,5 +1,5 @@
 {
-    "name": "getpop/taxonomies-wp",
+    "name": "pop-schema/taxonomies-wp",
     "type": "library",
     "description": "Implementation for WordPress of contracts from package \"Taxonomies\"",
     "keywords": [
@@ -19,9 +19,9 @@
     "prefer-stable": true,
     "require": {
         "php": "~7.2",
-        "getpop/taxonomies": "dev-master",
-        "getpop/customposts-wp": "dev-master",
-        "getpop/migrate-taxonomies-wp": "dev-master"
+        "pop-schema/taxonomies": "dev-master",
+        "pop-schema/customposts-wp": "dev-master",
+        "pop-schema/migrate-taxonomies-wp": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": ">=8.5",
@@ -30,12 +30,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PoP\\TaxonomiesWP\\": "src"
+            "PoPSchema\\TaxonomiesWP\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PoP\\TaxonomiesWP\\": "tests"
+            "PoPSchema\\TaxonomiesWP\\": "tests"
         }
     },
     "scripts": {
