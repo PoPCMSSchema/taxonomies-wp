@@ -26,11 +26,15 @@ class TaxonomyTypeAPI implements TaxonomyTypeAPIInterface
     public const HOOK_QUERY = __CLASS__ . ':query';
     public final const HOOK_ORDERBY_QUERY_ARG_VALUE = __CLASS__ . ':orderby-query-arg-value';
 
+    /**
+     * @return array{0:WP_Term|null,1:null|string|int}
+     */
     protected function getTermObjectAndID(string|int|object $termObjectOrID): array
     {
         if (is_object($termObjectOrID)) {
+            /** @var WP_Term */
             $termObject = $termObjectOrID;
-            $termObjectID = $termObject->ID;
+            $termObjectID = $termObject->term_id;
         } else {
             $termObjectID = $termObjectOrID;
             $termObject = $this->getTerm($termObjectID);
@@ -43,10 +47,11 @@ class TaxonomyTypeAPI implements TaxonomyTypeAPIInterface
 
     protected function getTerm(string|int $termObjectID, string $taxonomy = ''): ?WP_Term
     {
-        $term = get_term($termObjectID, $taxonomy);
+        $term = get_term((int)$termObjectID, $taxonomy);
         if ($term instanceof WP_Error) {
             return null;
         }
+        /** @var WP_Term */
         return $term;
     }
 
@@ -62,6 +67,11 @@ class TaxonomyTypeAPI implements TaxonomyTypeAPIInterface
         return $termObject->taxonomy;
     }
 
+    /**
+     * @return array<string,mixed>
+     * @param array<string,mixed> $query
+     * @param array<string,mixed> $options
+     */
     public function convertTaxonomiesQuery(array $query, array $options = []): array
     {
         if ($return_type = $options[QueryOptions::RETURN_TYPE] ?? null) {
